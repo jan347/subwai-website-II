@@ -66,7 +66,7 @@ export function FeatureSection({
           >
             <ProductScreenshot>
               {children || (
-                <div className="w-full aspect-[4/3] bg-bg-surface flex items-center justify-center border border-border-subtle rounded-lg">
+                <div className="w-full aspect-[4/3] bg-bg-surface flex items-center justify-center border border-border-subtle rounded-none">
                   <span className="text-text-tertiary">Feature UI Placeholder</span>
                 </div>
               )}

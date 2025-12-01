@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SubwAI - Grant Funding, Powered by AI",
   description: "The intelligent platform for finding, writing, and managing grants.",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({

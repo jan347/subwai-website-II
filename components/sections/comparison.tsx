@@ -26,7 +26,7 @@ export function Comparison() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-xl border border-border-subtle overflow-hidden"
+          className="rounded-none border border-border-subtle overflow-hidden"
         >
           <Table>
             <TableHeader className="bg-bg-surface">

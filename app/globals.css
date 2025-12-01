@@ -111,7 +111,7 @@
   --input: var(--border-default);
   --ring: var(--accent-purple);
   
-  --radius: 0.5rem;
+  --radius: 0rem;
   
   --chart-1: var(--accent-purple);
   --chart-2: #2dd4bf;
@@ -197,7 +197,7 @@
 
   .product-screenshot {
     border: 1px solid var(--border-subtle);
-    border-radius: 12px;
+    border-radius: 0px;
     box-shadow: 
       0 0 0 1px var(--border-subtle),
       0 20px 40px -20px rgba(0, 0, 0, 0.5),

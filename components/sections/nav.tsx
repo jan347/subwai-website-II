@@ -44,7 +44,7 @@ export function Nav() {
           className="flex items-center gap-2 cursor-pointer"
         >
           {/* Logo */}
-          <span className="text-xl font-semibold tracking-tight">SubwAI</span>
+          <img src="/logo.svg" alt="SubwAI" className="h-8" />
         </button>
 
         {/* Desktop Nav */}
@@ -77,7 +77,7 @@ export function Nav() {
             Login
           </Button>
           <Button variant="subtle" className="h-8 px-3 text-xs">
-            Apply Now <span className="ml-1">→</span>
+            Discover funding <span className="ml-1">→</span>
           </Button>
         </div>
       </Container>

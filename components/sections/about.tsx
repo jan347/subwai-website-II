@@ -2,7 +2,7 @@
 
 import { Container } from "@/components/ui/container"
 import { SectionLabel } from "@/components/ui/section-label"
-import { Card, CardContent } from "@/components/ui/card"
+import SpotlightCard from "@/components/ui/spotlight-card"
 import { motion } from "framer-motion"
 
 const team = [
@@ -45,15 +45,15 @@ export function About() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
             >
-              <Card className="bg-bg-surface border-border-subtle h-full">
-                <CardContent className="p-6">
+              <SpotlightCard className="!bg-transparent border-border-subtle h-full" spotlightColor="rgba(30, 80, 180, 0.25)">
+                <div className="p-6">
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-text-primary mb-1">{member.name}</h3>
                     <p className="text-sm text-text-tertiary uppercase tracking-wide">{member.role}</p>
                   </div>
                   <p className="text-text-secondary leading-relaxed">{member.description}</p>
-                </CardContent>
-              </Card>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
@@ -65,14 +65,16 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <div className="p-8 rounded-xl border border-border-subtle bg-bg-surface">
-            <h3 className="text-2xl font-semibold text-text-primary mb-4">Our Mission</h3>
-            <p className="body text-lg text-text-secondary leading-relaxed">
-              We believe that every organization with a worthy mission should have access to the funding 
-              they need to make an impact. By automating the most time-consuming parts of grant writing 
-              and leveraging AI to improve success rates, we're making grant funding accessible to everyone.
-            </p>
-          </div>
+          <SpotlightCard className="!bg-transparent border-border-subtle" spotlightColor="rgba(30, 80, 180, 0.25)">
+            <div className="p-8">
+              <h3 className="text-2xl font-semibold text-text-primary mb-4">Our Mission</h3>
+              <p className="body text-lg text-text-secondary leading-relaxed">
+                We believe that every organization with a worthy mission should have access to the funding 
+                they need to make an impact. By automating the most time-consuming parts of grant writing 
+                and leveraging AI to improve success rates, we're making grant funding accessible to everyone.
+              </p>
+            </div>
+          </SpotlightCard>
         </motion.div>
       </Container>
     </section>

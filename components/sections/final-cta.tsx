@@ -22,7 +22,7 @@ export function FinalCTA() {
           </h2>
           
           <div className="flex flex-col items-center gap-6">
-            <Button size="lg" className="h-14 px-10 text-lg bg-text-primary text-bg-base hover:bg-white/90 rounded-full">
+            <Button size="lg" className="h-14 px-10 text-lg bg-text-primary text-bg-base hover:bg-white/90 rounded-none">
               Book a free strategy call <span className="ml-2">→</span>
             </Button>
             

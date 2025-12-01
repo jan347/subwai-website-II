@@ -20,7 +20,7 @@ const ProductScreenshot = React.forwardRef<
   >
     {/* Ambient Glow */}
     <div className="absolute -inset-4 bg-accent-purple/20 blur-[60px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-    <div className="absolute -inset-px rounded-[13px] bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="absolute -inset-px rounded-none bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     
     <div className="product-screenshot relative overflow-hidden bg-bg-surface/50 backdrop-blur-sm">
       {src ? (

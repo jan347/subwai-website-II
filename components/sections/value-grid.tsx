@@ -2,35 +2,32 @@
 
 import { Container } from "@/components/ui/container"
 import { SectionLabel } from "@/components/ui/section-label"
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import SpotlightCard from "@/components/ui/spotlight-card"
 import { motion } from "framer-motion"
+import { ScanSearchIcon } from "@/components/ui/icons/lucide-scan-search"
+import { BadgeCheckIcon } from "@/components/ui/icons/lucide-badge-check"
+import { BookLockIcon } from "@/components/ui/icons/lucide-book-lock"
 
 const features = [
   {
     title: "AI-Powered Discovery",
     description: "Find relevant opportunities in minutes. Our AI scans thousands of funding sources to match your profile.",
     icon: (
-      <svg className="w-6 h-6 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
+      <ScanSearchIcon className="w-10 h-10 text-accent-purple" />
     )
   },
   {
     title: "Expert Review",
     description: "Get real-time feedback on your proposals. Increase win rates with automated scoring and suggestions.",
     icon: (
-      <svg className="w-6 h-6 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+      <BadgeCheckIcon className="w-10 h-10 text-accent-purple" />
     )
   },
   {
     title: "Compliance Built-in",
     description: "Never miss a requirement. Automated checklists ensure every submission meets funder guidelines.",
     icon: (
-      <svg className="w-6 h-6 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-      </svg>
+      <BookLockIcon className="w-10 h-10 text-accent-purple" />
     )
   }
 ]
@@ -55,17 +52,15 @@ export function ValueGrid() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
             >
-              <Card className="h-full bg-bg-surface border-border-subtle hover:border-border-hover hover:bg-bg-surface-hover/50 group">
-                <CardHeader>
-                  <div className="mb-4 w-12 h-12 rounded-lg bg-bg-elevated flex items-center justify-center border border-border-subtle group-hover:border-accent-purple/30 transition-colors">
-                    {feature.icon}
-                  </div>
-                  <CardTitle className="text-xl mb-2 text-text-primary">{feature.title}</CardTitle>
-                  <CardDescription className="text-text-secondary text-base leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <SpotlightCard className="h-full group !bg-transparent" spotlightColor="rgba(30, 80, 180, 0.25)">
+                <div className="mb-6">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-text-primary">{feature.title}</h3>
+                <p className="text-text-secondary text-base leading-relaxed">
+                  {feature.description}
+                </p>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

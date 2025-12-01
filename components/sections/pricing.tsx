@@ -2,7 +2,7 @@
 
 import { Container } from "@/components/ui/container"
 import { SectionLabel } from "@/components/ui/section-label"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import SpotlightCard from "@/components/ui/spotlight-card"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
@@ -65,16 +65,19 @@ function PricingCard({ title, price, priceSuffix, description, features, buttonT
       transition={{ duration: 0.5, delay }}
       className="h-full"
     >
-      <Card className={`h-full flex flex-col ${highlight ? 'border-accent-purple/50 bg-bg-surface shadow-2xl shadow-accent-purple/10' : 'bg-bg-surface/50 border-border-subtle'}`}>
-        <CardHeader>
+      <SpotlightCard 
+        className={`h-full flex flex-col !bg-transparent ${highlight ? 'border-accent-purple/50 shadow-2xl shadow-accent-purple/10' : 'border-border-subtle'}`}
+        spotlightColor={highlight ? "rgba(30, 80, 180, 0.5)" : "rgba(30, 80, 180, 0.25)"}
+      >
+        <div className="p-6 flex flex-col gap-1.5">
           <h3 className="text-lg font-medium text-text-secondary mb-2">{title}</h3>
           <div className="flex items-baseline gap-1 mb-2">
             <span className="text-3xl font-semibold text-text-primary">{price}</span>
             {priceSuffix && <span className="text-sm text-text-tertiary">{priceSuffix}</span>}
           </div>
           <p className="text-sm text-text-secondary">{description}</p>
-        </CardHeader>
-        <CardContent className="flex-1">
+        </div>
+        <div className="flex-1 p-6 pt-0">
           <Separator className="mb-6 bg-border-subtle" />
           <ul className="space-y-3">
             {features.map((feature: string, i: number) => (
@@ -86,13 +89,13 @@ function PricingCard({ title, price, priceSuffix, description, features, buttonT
               </li>
             ))}
           </ul>
-        </CardContent>
-        <CardFooter>
+        </div>
+        <div className="p-6 pt-0 flex items-center">
           <Button variant={highlight ? "default" : "outline"} className={`w-full ${highlight ? "bg-text-primary text-bg-base hover:bg-white/90" : ""}`}>
             {buttonText}
           </Button>
-        </CardFooter>
-      </Card>
+        </div>
+      </SpotlightCard>
     </motion.div>
   )
 }

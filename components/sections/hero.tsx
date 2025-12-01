@@ -6,8 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Container } from "@/components/ui/container"
 import { SectionLabel } from "@/components/ui/section-label"
-import { ProductScreenshot } from "@/components/ui/product-screenshot"
+import MagicBento from "@/components/ui/magic-bento"
 import DarkVeil from "@/components/ui/dark-veil"
+import ShinyText from "@/components/ui/shiny-text"
 
 export function Hero() {
   return (
@@ -15,7 +16,7 @@ export function Hero() {
       {/* Background Effect */}
       <div className="absolute inset-0 z-0">
         <DarkVeil 
-          hueShift={235} // Blue range - shifted to match #2D6DDB
+          hueShift={10} // Adjusted to find Blue (was 235 which looked Red)
           noiseIntensity={0.1}
           speed={0.3}
         />
@@ -30,9 +31,9 @@ export function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          <h1 className="headline-xl mb-6 max-w-4xl text-gradient leading-[1.15] pb-2">
-            SubwAI is purpose-built for <br className="hidden md:block" />
-            winning grant funding
+          <h1 className="headline-xl mb-6 max-w-4xl leading-[1.15] pb-2">
+            <span className="text-gradient">SubwAI is purpose-built for</span> <br className="hidden md:block" />
+            <ShinyText text="winning grant funding" disabled={false} speed={2.5} className="inline-block font-semibold" />
           </h1>
           
           <p className="body text-lg md:text-xl max-w-2xl mb-10">
@@ -63,64 +64,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="w-full max-w-5xl mx-auto"
         >
-          <ProductScreenshot className="max-w-5xl shadow-2xl">
-            {/* Placeholder Content for Screenshot */}
-            <div className="w-full aspect-[16/10] bg-bg-surface flex flex-col relative overflow-hidden">
-              {/* Fake UI Header */}
-              <div className="h-12 border-b border-border-subtle flex items-center px-4 gap-4">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/20" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/20" />
-                </div>
-                <div className="h-6 w-32 bg-border-subtle rounded-full ml-4" />
-              </div>
-              
-              {/* Fake UI Body */}
-              <div className="flex-1 flex">
-                {/* Sidebar */}
-                <div className="w-64 border-r border-border-subtle p-4 hidden md:block">
-                  <div className="space-y-3">
-                    <div className="h-4 w-24 bg-border-subtle rounded animate-pulse" />
-                    <div className="h-4 w-32 bg-border-subtle rounded animate-pulse opacity-60" />
-                    <div className="h-4 w-20 bg-border-subtle rounded animate-pulse opacity-60" />
-                    <div className="h-4 w-28 bg-border-subtle rounded animate-pulse opacity-60" />
-                  </div>
-                </div>
-                
-                {/* Main Content */}
-                <div className="flex-1 p-8">
-                  <div className="flex justify-between items-center mb-8">
-                    <div className="h-8 w-48 bg-border-subtle rounded animate-pulse" />
-                    <div className="h-8 w-24 bg-accent-purple/20 rounded animate-pulse" />
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="h-32 rounded-lg border border-border-subtle bg-bg-elevated p-4">
-                        <div className="h-4 w-12 bg-success/20 rounded mb-4" />
-                        <div className="h-4 w-3/4 bg-border-subtle rounded mb-2" />
-                        <div className="h-3 w-1/2 bg-border-subtle/50 rounded" />
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-8 h-64 rounded-lg border border-border-subtle bg-bg-elevated p-6 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="h-16 w-16 rounded-full bg-accent-purple/10 mx-auto mb-4 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                      <div className="h-4 w-48 bg-border-subtle rounded mx-auto mb-2" />
-                      <div className="h-3 w-32 bg-border-subtle/50 rounded mx-auto" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ProductScreenshot>
+          <MagicBento 
+            enableSpotlight={false}
+            spotlightRadius={50}
+          />
         </motion.div>
       </Container>
     </section>
