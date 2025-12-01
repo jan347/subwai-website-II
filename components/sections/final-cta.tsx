@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export function FinalCTA() {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/10 via-transparent to-transparent opacity-50" />
       

@@ -26,7 +26,7 @@ export function FeatureSection({
   delay = 0
 }: FeatureSectionProps) {
   return (
-    <section className="py-24 md:py-32 overflow-hidden">
+    <section className="py-16 md:py-24 overflow-hidden">
       <Container>
         <div className={cn(
           "flex flex-col gap-12 md:gap-24 items-center",

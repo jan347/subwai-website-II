@@ -34,7 +34,7 @@ const features = [
 
 export function ValueGrid() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-24">
       <Container>
         <div className="text-center mb-16">
           <SectionLabel>Why SubwAI</SectionLabel>

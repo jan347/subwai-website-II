@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Container } from "@/components/ui/container"
 import { SectionLabel } from "@/components/ui/section-label"
-import MagicBento from "@/components/ui/magic-bento"
+import { ProductScreenshot } from "@/components/ui/product-screenshot"
 import DarkVeil from "@/components/ui/dark-veil"
 import ShinyText from "@/components/ui/shiny-text"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-32 overflow-hidden">
+    <section className="relative min-h-[80vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden">
       {/* Background Effect */}
       <div className="absolute inset-0 z-0">
         <DarkVeil 
@@ -41,36 +41,18 @@ export function Hero() {
             and manage your entire funding lifecycle in one place.
           </p>
 
-          <form className="flex flex-col sm:flex-row gap-3 w-full max-w-md mb-12" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col sm:flex-row gap-3 w-full max-w-md" onSubmit={(e) => e.preventDefault()}>
             <Input 
               type="email" 
               placeholder="Enter your email address" 
-              className="h-12 bg-bg-surface/50 border-border-default focus:border-accent-purple/50 text-text-primary"
+              className="h-12 rounded-md bg-transparent border-border-subtle focus:border-accent-purple text-text-primary placeholder:text-text-tertiary"
             />
-            <Button size="lg" className="h-12 px-8 bg-text-primary text-bg-base hover:bg-white/90">
+            <Button size="lg" className="h-12 px-8 rounded-md bg-text-primary text-bg-base hover:bg-white/90">
               Get Started <span className="ml-2">→</span>
             </Button>
           </form>
-
-          <div className="flex items-center gap-2 text-sm text-text-tertiary mb-16">
-            <span className="flex items-center gap-1">
-              <span className="text-success">★★★★★</span>
-              Trusted by 500+ organizations
-            </span>
-          </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="w-full max-w-5xl mx-auto"
-        >
-          <MagicBento 
-            enableSpotlight={false}
-            spotlightRadius={50}
-          />
-        </motion.div>
       </Container>
     </section>
   )

@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24 md:py-32 bg-bg-surface/30">
+    <section id="pricing" className="py-16 md:py-24 bg-bg-surface/30">
       <Container>
         <div className="text-center mb-16">
           <SectionLabel>Pricing</SectionLabel>
