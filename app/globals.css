@@ -1,0 +1,208 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Linear Design Tokens Mapping */
+  --color-bg-base: var(--bg-base);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-surface-hover: var(--bg-surface-hover);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-glow: var(--accent-glow);
+  
+  /* Standard Shadcn Mappings */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Default to dark mode values since it's a dark-themed site */
+  --bg-base: #000000;
+  --bg-elevated: #0a0a0a;
+  --bg-surface: #111111;
+  --bg-surface-hover: #191919;
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.12);
+
+  --text-primary: #ededed;
+  --text-secondary: #8f8f8f;
+  --text-tertiary: #5c5c5c;
+
+  --accent-purple: #8b5cf6;
+  --accent-subtle: rgba(139, 92, 246, 0.1);
+  --accent-glow: rgba(139, 92, 246, 0.4);
+
+  --success: #00dc82;
+
+  /* Shadcn Variables Mapped to Linear Tokens */
+  --background: var(--bg-base);
+  --foreground: var(--text-primary);
+  
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  
+  --popover: var(--bg-elevated);
+  --popover-foreground: var(--text-primary);
+  
+  --primary: var(--text-primary);
+  --primary-foreground: var(--bg-base);
+  
+  --secondary: var(--bg-surface);
+  --secondary-foreground: var(--text-primary);
+  
+  --muted: var(--bg-surface);
+  --muted-foreground: var(--text-secondary);
+  
+  --accent: var(--bg-surface-hover);
+  --accent-foreground: var(--text-primary);
+  
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fef2f2;
+  
+  --border: var(--border-subtle);
+  --input: var(--border-default);
+  --ring: var(--accent-purple);
+  
+  --radius: 0.5rem;
+  
+  --chart-1: var(--accent-purple);
+  --chart-2: #2dd4bf;
+  --chart-3: #f472b6;
+  --chart-4: #fbbf24;
+  --chart-5: #38bdf8;
+  
+  --sidebar: var(--bg-elevated);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-purple);
+  --sidebar-primary-foreground: white;
+  --sidebar-accent: var(--bg-surface);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-subtle);
+  --sidebar-ring: var(--accent-purple);
+}
+
+.dark {
+  /* Same as root since we are dark-first */
+  --background: var(--bg-base);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-elevated);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--text-primary);
+  --primary-foreground: var(--bg-base);
+  --secondary: var(--bg-surface);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--bg-surface);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--bg-surface-hover);
+  --accent-foreground: var(--text-primary);
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fef2f2;
+  --border: var(--border-subtle);
+  --input: var(--border-default);
+  --ring: var(--accent-purple);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-accent-purple/20 selection:text-white;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+}
+
+@layer utilities {
+  .headline-xl {
+    font-size: clamp(48px, 8vw, 80px);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .headline-lg {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+
+  .section-label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+
+  .body {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .product-screenshot {
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 1px var(--border-subtle),
+      0 20px 40px -20px rgba(0, 0, 0, 0.5),
+      0 0 120px -20px var(--accent-glow);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #ededed, #8f8f8f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
