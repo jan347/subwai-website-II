@@ -15,7 +15,7 @@ const comparisonData = [
 
 export function Comparison() {
   return (
-    <section className="py-16 md:py-24">
+    <section id="comparison" className="py-16 md:py-24">
       <Container>
         <div className="mb-16 text-center md:text-left">
           <SectionLabel>Comparison</SectionLabel>

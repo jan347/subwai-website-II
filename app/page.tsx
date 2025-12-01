@@ -7,6 +7,7 @@ import { Comparison } from "@/components/sections/comparison"
 import { Pricing } from "@/components/sections/pricing"
 import { About } from "@/components/sections/about"
 import { FinalCTA } from "@/components/sections/final-cta"
+import { ScrollProgress } from "@/components/ui/scroll-progress"
 
 import { DiscoveryMockup } from "@/components/mockups/discovery-mockup"
 import { WritingMockup } from "@/components/mockups/writing-mockup"
@@ -15,6 +16,7 @@ import { ComplianceMockup } from "@/components/mockups/compliance-mockup"
 export default function Home() {
   return (
     <div className="flex flex-col gap-0">
+      <ScrollProgress />
       <Hero />
       <LogoBar />
       <ValueGrid />

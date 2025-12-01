@@ -12,7 +12,7 @@ import ShinyText from "@/components/ui/shiny-text"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden">
+    <section id="hero" className="relative min-h-[80vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden">
       {/* Background Effect */}
       <div className="absolute inset-0 z-0">
         <DarkVeil 
