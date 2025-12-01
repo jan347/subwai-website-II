@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { cn } from "@/lib/utils"
@@ -17,6 +17,20 @@ export function Nav() {
     })
   }, [scrollY])
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      const offset = 60 // Nav height
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <motion.header
       className={cn(
@@ -25,21 +39,36 @@ export function Nav() {
       )}
     >
       <Container className="h-full flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center gap-2 cursor-pointer"
+        >
           {/* Logo */}
           <span className="text-xl font-semibold tracking-tight">SubwAI</span>
-        </Link>
+        </button>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
-          <Button variant="ghost" asChild className="text-text-secondary hover:text-text-primary">
-            <Link href="#product">Product</Link>
+          <Button 
+            variant="ghost" 
+            className="text-text-secondary hover:text-text-primary"
+            onClick={() => scrollToSection('product')}
+          >
+            Product
           </Button>
-          <Button variant="ghost" asChild className="text-text-secondary hover:text-text-primary">
-            <Link href="#pricing">Pricing</Link>
+          <Button 
+            variant="ghost" 
+            className="text-text-secondary hover:text-text-primary"
+            onClick={() => scrollToSection('pricing')}
+          >
+            Pricing
           </Button>
-          <Button variant="ghost" asChild className="text-text-secondary hover:text-text-primary">
-            <Link href="#about">About</Link>
+          <Button 
+            variant="ghost" 
+            className="text-text-secondary hover:text-text-primary"
+            onClick={() => scrollToSection('about')}
+          >
+            About
           </Button>
         </nav>
 

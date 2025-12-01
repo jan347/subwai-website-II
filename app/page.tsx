@@ -5,6 +5,7 @@ import { FeatureSection } from "@/components/sections/feature-section"
 import { Metrics } from "@/components/sections/metrics"
 import { Comparison } from "@/components/sections/comparison"
 import { Pricing } from "@/components/sections/pricing"
+import { About } from "@/components/sections/about"
 import { FinalCTA } from "@/components/sections/final-cta"
 
 import { DiscoveryMockup } from "@/components/mockups/discovery-mockup"
@@ -65,6 +66,7 @@ export default function Home() {
       <Metrics />
       <Comparison />
       <Pricing />
+      <About />
       <FinalCTA />
     </div>
   )

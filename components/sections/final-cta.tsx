@@ -8,7 +8,7 @@ export function FinalCTA() {
   return (
     <section className="py-32 relative overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-radial-gradient from-accent-purple/10 to-transparent opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/10 via-transparent to-transparent opacity-50" />
       
       <Container className="relative z-10 text-center">
         <motion.div

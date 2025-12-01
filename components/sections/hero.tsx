@@ -15,11 +15,12 @@ export function Hero() {
       {/* Background Effect */}
       <div className="absolute inset-0 z-0">
         <DarkVeil 
-          hueShift={280} // Purple/Violet range
+          hueShift={235} // Blue range - shifted to match #2D6DDB
           noiseIntensity={0.1}
           speed={0.3}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-base/50 to-bg-base pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2D6DDB]/12 via-bg-base/50 to-bg-base pointer-events-none" />
+        <div className="absolute inset-0 bg-[#2D6DDB]/8 pointer-events-none mix-blend-soft-light" />
       </div>
 
       <Container className="relative z-10 text-center mb-20">
@@ -29,9 +30,7 @@ export function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          <SectionLabel>Grant Funding</SectionLabel>
-          
-          <h1 className="headline-xl mb-6 max-w-4xl text-gradient">
+          <h1 className="headline-xl mb-6 max-w-4xl text-gradient leading-[1.15] pb-2">
             SubwAI is purpose-built for <br className="hidden md:block" />
             winning grant funding
           </h1>

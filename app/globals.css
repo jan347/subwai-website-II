@@ -76,9 +76,9 @@
   --text-secondary: #8f8f8f;
   --text-tertiary: #5c5c5c;
 
-  --accent-purple: #8b5cf6;
-  --accent-subtle: rgba(139, 92, 246, 0.1);
-  --accent-glow: rgba(139, 92, 246, 0.4);
+  --accent-purple: #2D6DDB;
+  --accent-subtle: rgba(45, 109, 219, 0.1);
+  --accent-glow: rgba(45, 109, 219, 0.4);
 
   --success: #00dc82;
 
@@ -156,6 +156,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground antialiased selection:bg-accent-purple/20 selection:text-white;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
@@ -167,7 +170,8 @@
     font-size: clamp(48px, 8vw, 80px);
     font-weight: 500;
     letter-spacing: -0.03em;
-    line-height: 1.05;
+    line-height: 1.15;
+    padding-bottom: 0.1em;
   }
 
   .headline-lg {
